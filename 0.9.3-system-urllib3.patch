@@ -1,0 +1,11 @@
+--- origsrc/httpie-0.9.3/httpie/client.py	2016-01-01 16:27:07.000000000 -0600
++++ src/httpie-0.9.3/httpie/client.py	2016-03-16 16:32:22.693386300 -0500
+@@ -3,7 +3,7 @@ import sys
+ from pprint import pformat
+ 
+ import requests
+-from requests.packages import urllib3
++import urllib3
+ 
+ from httpie import sessions
+ from httpie import __version__

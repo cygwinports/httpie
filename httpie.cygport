@@ -1,0 +1,28 @@
+inherit python3-distutils
+
+NAME="httpie"
+VERSION=0.9.3
+RELEASE=1
+CATEGORY="Net"
+SUMMARY="Command-line HTTP client for web services"
+DESCRIPTION="HTTPie is a command line HTTP client. Its goal is to make CLI
+interaction with web services as human-friendly as possible. It provides a
+simple http command that allows for sending arbitrary HTTP requests using a
+simple and natural syntax, and displays colorized output. HTTPie can be used
+for testing, debugging, and generally interacting with HTTP servers."
+HOMEPAGE="https://github.com/jkbrzt/httpie"
+SRC_URI="${HOMEPAGE}/archive/${VERSION}/httpie-${VERSION}.tar.gz"
+PATCH_URI="0.9.3-system-urllib3.patch"
+
+ARCH=noarch
+
+src_install() {
+	cd ${B}
+	python3_distutils_install
+
+	PYTHONPATH=${D}${PYTHON3_SITELIB} \
+	help2man -o http.1 ${D}/usr/bin/http
+	doman http.1
+
+	dodoc ${S}/*.rst
+}
