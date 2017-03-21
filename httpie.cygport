@@ -1,7 +1,7 @@
 inherit python3-distutils
 
 NAME="httpie"
-VERSION=0.9.3
+VERSION=0.9.9
 RELEASE=1
 CATEGORY="Net"
 SUMMARY="Command-line HTTP client for web services"
@@ -11,8 +11,6 @@ simple http command that allows for sending arbitrary HTTP requests using a
 simple and natural syntax, and displays colorized output. HTTPie can be used
 for testing, debugging, and generally interacting with HTTP servers."
 HOMEPAGE="https://github.com/jkbrzt/httpie"
-SRC_URI="${HOMEPAGE}/archive/${VERSION}/httpie-${VERSION}.tar.gz"
-PATCH_URI="0.9.3-system-urllib3.patch"
 
 ARCH=noarch
 
