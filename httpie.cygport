@@ -1,7 +1,7 @@
-inherit python3-distutils
+inherit python3-wheel
 
 NAME="httpie"
-VERSION=0.9.9
+VERSION=1.0.2
 RELEASE=1
 CATEGORY="Net"
 SUMMARY="Command-line HTTP client for web services"
@@ -16,7 +16,7 @@ ARCH=noarch
 
 src_install() {
 	cd ${B}
-	python3_distutils_install
+	python3_wheel_install
 
 	PYTHONPATH=${D}${PYTHON3_SITELIB} \
 	help2man -o http.1 ${D}/usr/bin/http
